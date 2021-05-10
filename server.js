@@ -1,6 +1,5 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const PORT = 3000
 
 
 const app = express()
@@ -8,19 +7,16 @@ require('dotenv').config()
 const PORT = process.env.PORT
 const MONGODB_URI = process.env.MONGODB_URI
 
-// const birdsController = require('./controllers/birds_controller.js')
-app.use(express.json())
+const foodsController = require('./controllers/foods_controller.js')
 app.use(express.static('public'))
-// app.use('/birds', birdsController)
+app.use(express.json())
+app.use('/foods', foodsController)
 
 
 
-app.get('/', (req, res) => {
-  res.send("hello World")
-})
-
-
-
+// app.get('/', (req, res) => {
+//   res.send("hello World")
+// })
 
 
 app.listen(PORT, () => {
