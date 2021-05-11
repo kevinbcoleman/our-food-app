@@ -4,10 +4,9 @@
   "description": "Our food app Chris Nugroho",
   "main": "server.js",
   "dependencies": {
-    "dotenv": "^9.0.1",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
-    "mongoose": "^5.12.7",
-    "static": "^2.0.0"
+    "mongoose": "^5.12.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
