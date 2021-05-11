@@ -17,11 +17,11 @@ foods.post('/', (req, res) => {
   })
 })
 
-foods.get('/seed', (req, res) => {
-  Food.insertMany(foodSeed, (err, manyFoods) => {
-    res.redirect('/foods')
-  })
-})
+// foods.get('/seed', (req, res) => {
+//   Food.insertMany(foodSeed, (err, manyFoods) => {
+//     res.redirect('/foods')
+//   })
+// })
 
 foods.put('/:id', (req, res) => {
   Food.findByIdAndUpdate(
@@ -44,8 +44,8 @@ foods.delete('/:id', (req, res) => {
   Food.findByIdAndRemove(req.params.id, (err, deletedFood) => {
     //can put if err to check the error here
     Food.find({}, (err, foundFoods) => {
-    // or error check here
-    res.json(foundFoods)
+      // or error check here
+      res.json(foundFoods)
     })
   })
 })
